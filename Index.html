@@ -1,1 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nirav Trivedi | Data Analyst Portfolio</title>
+
+<meta name="description" content="Nirav Trivedi Data Analyst Portfolio - Python, SQL, Power BI, Excel, Machine Learning, Statistics and Dashboard Development">
+
+<meta name="keywords" content="Nirav Trivedi, Data Analyst, Python, SQL, Power BI, Excel, Machine Learning, Statistics, Dashboard, Data Visualization">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+
+background:
+radial-gradient(circle at 10% 20%, rgba(56,189,248,.15) 0%, transparent 25%),
+radial-gradient(circle at 90% 70%, rgba(14,165,233,.15) 0%, transparent 25%),
+radial-gradient(circle at 50% 50%, rgba(99,102,241,.10) 0%, transparent 40%);
+
+z-index:-1;
+}
+
+/* Navigation */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+box-shadow:0 4px 20px rgba(0,0,0,.4);
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+/* Hero */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:100px 10%;
+
+}
+
+.hero-content{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+
+max-width:1200px;
+width:100%;
+
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
+font-size:65px;
+line-height:1.1;
+margin-bottom:15px;
+}
+
+.hero-text h1 span{
+color:#38bdf8;
+}
+
+.hero-text h3{
+font-size:28px;
+font-weight:400;
+margin-bottom:20px;
+color:#cbd5e1;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:1.8;
+color:#d1d5db;
+margin-bottom:30px;
+}
+
+.btn{
+
+display:inline-block;
+
+padding:14px 30px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+margin-right:15px;
+
+}
+
+.primary{
+background:#38bdf8;
+color:white;
+}
+
+.secondary{
+border:2px solid #38bdf8;
+color:#38bdf8;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.hero-image{
+
+flex:1;
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:350px;
+height:350px;
+
+border-radius:50%;
+
+border:5px solid #38bdf8;
+
+box-shadow:0 0 50px rgba(56,189,248,.5);
+
+object-fit:cover;
+
+}
+
+/* Stats */
+
+.stats{
+
+padding:60px 10%;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.stat-card{
+
+background:#1e293b;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.stat-card h2{
+
+font-size:42px;
+
+color:#38bdf8;
+
+margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+color:#cbd5e1;
+
+}
+
+/* Common Section */
+
+section{
+
+padding:90px 10%;
+
+}
+
+.section-title{
+
+font-size:40px;
+
+margin-bottom:40px;
+
+text-align:center;
+
+color:#38bdf8;
+
+}
+
+.card{
+
+background:#1e293b;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero-content{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:45px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Nirav Trivedi
+</div>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#experience">Experience</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h1>
+Hi, I'm
+<span>Nirav Trivedi</span>
+</h1>
+
+<h3>
+Data Analyst | Python | Power BI | SQL | Excel
+</h3>
+
+<p>
+
+Transforming raw data into actionable business insights through
+Data Analysis, Machine Learning, Statistical Modeling and
+Interactive Dashboard Development.
+
+</p>
+
+<a href="#projects" class="btn primary">
+View Projects
+</a>
+
+<a href="https://github.com/niravtrivedi23/data-analyst-portfolio/blob/main/NIRAV%20TRIVRDI.pdf"
+target="_blank"
+class="btn secondary">
+
+Download Resume
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://raw.githubusercontent.com/niravtrivedi23/data-analyst-portfolio/main/Profile.jpeg">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-card">
+<h2>8+</h2>
+<p>Analytics Projects</p>
+</div>
+
+<div class="stat-card">
+<h2>2+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-card">
+<h2>4+</h2>
+<p>Core Technologies</p>
+</div>
+
+<div class="stat-card">
+<h2>M.Sc</h2>
+<p>Applied Statistics</p>
+</div>
+
+</section>
+  <!-- ABOUT SECTION -->
+
+<section id="about">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<div class="card">
+
+<p style="font-size:18px;line-height:2;color:#d1d5db;">
+
+I am a Data Analyst with expertise in Excel, Power BI, SQL, and Python, backed by a strong foundation in Applied Statistics.
+
+I specialize in data cleaning, business analytics, dashboard development, machine learning, and transforming raw data into actionable business insights.
+
+Through projects across Finance, Entertainment, Hospitality, Sports, Retail, and Environmental domains, I have developed strong analytical, problem-solving, and data visualization skills.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- SKILLS SECTION -->
+
+<section id="skills">
+
+<h2 class="section-title">
+Technical Skills
+</h2>
+
+<div style="display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;">
+
+<div class="card">
+<h3 style="color:#38bdf8;">📊 Power BI</h3>
+<p>Interactive Dashboards, KPI Tracking, Business Intelligence</p>
+</div>
+
+<div class="card">
+<h3 style="color:#38bdf8;">🐍 Python</h3>
+<p>Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn</p>
+</div>
+
+<div class="card">
+<h3 style="color:#38bdf8;">🗄 SQL</h3>
+<p>Joins, CTEs, Window Functions, Query Optimization</p>
+</div>
+
+<div class="card">
+<h3 style="color:#38bdf8;">📈 Excel</h3>
+<p>Dashboards, Pivot Tables, XLOOKUP, Power Query</p>
+</div>
+
+<div class="card">
+<h3 style="color:#38bdf8;">🤖 Machine Learning</h3>
+<p>K-Means Clustering, Regression, Classification</p>
+</div>
+
+<div class="card">
+<h3 style="color:#38bdf8;">📉 Statistics</h3>
+<p>Hypothesis Testing, Forecasting, Data Analysis</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2 class="section-title">
+Experience
+</h2>
+
+<div class="card" style="margin-bottom:25px;">
+
+<h3 style="color:#38bdf8;">
+Freelance Data Analyst
+</h3>
+
+<p style="margin-top:15px;line-height:2;">
+
+✔ Developed data-driven solutions using Excel, SQL, Python and Power BI.<br>
+
+✔ Created interactive dashboards and KPI monitoring systems.<br>
+
+✔ Performed business performance analysis and trend forecasting.<br>
+
+✔ Automated reporting processes for improved efficiency.<br>
+
+✔ Delivered projects across Finance, Hospitality, Entertainment and Retail industries.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3 style="color:#38bdf8;">
+Data Analyst Intern – SA Diamond
+</h3>
+
+<p style="margin-top:15px;line-height:2;">
+
+✔ Conducted operational and performance analysis using Python and Excel.<br>
+
+✔ Created dashboards and reports for management decision-making.<br>
+
+✔ Performed efficiency analysis and business reporting.<br>
+
+✔ Supported data-driven strategies and business monitoring.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<h2 class="section-title">
+Education
+</h2>
+
+<div class="card" style="margin-bottom:25px;">
+
+<h3 style="color:#38bdf8;">
+Master of Science (Applied Statistics)
+</h3>
+
+<p>
+
+Veer Narmad South Gujarat University<br>
+2022 – 2024
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 style="color:#38bdf8;">
+Bachelor of Commerce (B.Com)
+</h3>
+
+<p>
+
+DRB College of Commerce<br>
+2019 – 2022
+
+</p>
+
+</div>
+
+</section>
+  <!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">
+Featured Projects
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+">
+
+<!-- IPL -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/niravtrivedi23/IPL-Dashboard/main/IPL%20Dashboard.png"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+IPL Analytics Dashboard
+</h3>
+
+<p>
+Python, Streamlit and Power BI based dashboard for team and player performance analysis.
+</p>
+
+<a href="https://github.com/niravtrivedi23/IPL-Dashboard"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+
+<!-- Mutual Fund -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/niravtrivedi23/mutual-fund-analysis-Dashboard-Python-PowerBI/main/Mutual%20Fund%20Dashboard%20.png"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+Mutual Fund Analysis
+</h3>
+
+<p>
+Financial analytics project identifying low-risk and high-confidence investment opportunities.
+</p>
+
+<a href="https://github.com/niravtrivedi23/mutual-fund-analysis-Dashboard-Python-PowerBI"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+
+<!-- Tapi River -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/niravtrivedi23/Surat-Tapiriver-Analysis-GEE/main/Visualization/ndtI_VISUALIZATION_2.gif"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+Tapi River Sustainability
+</h3>
+
+<p>
+Google Earth Engine and Python project analyzing river width and turbidity changes.
+</p>
+
+<a href="https://github.com/niravtrivedi23/Surat-Tapiriver-Analysis-GEE"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+
+<!-- IMDb -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/niravtrivedi23/Indian-Movie-Analysis_-IMDb/main/IMDb%20Movie%20Dashboard.png"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+IMDb Movie Analytics
+</h3>
+
+<p>
+Analysis of India's Top 250 movies using Python and Power BI.
+</p>
+
+<a href="https://github.com/niravtrivedi23/Indian-Movie-Analysis_-IMDb"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+
+<!-- TV Serial -->
+
+<div class="card">
+
+<img src="https://github.com/niravtrivedi23/Indian-tv-serials-analytics/raw/main/TV%20Serial%20Dashboard.png"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+TV Serial Broadcast Analytics
+</h3>
+
+<p>
+353+ Indian TV Serials analyzed using Python, K-Means Clustering and Power BI.
+</p>
+
+<a href="https://github.com/niravtrivedi23/Indian-tv-serials-analytics"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+
+<!-- Web Series -->
+
+<div class="card">
+
+<img src="https://github.com/niravtrivedi23/global-web-series-analysis/raw/main/Web%20Series%20Dashboard%20.png"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+Global Web Series Analytics
+</h3>
+
+<p>
+Analysis of 3400+ web series across countries, industries and OTT platforms.
+</p>
+
+<a href="https://github.com/niravtrivedi23/global-web-series-analysis"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+
+<!-- Product Demand -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/niravtrivedi23/Market-Product-Demand-Analysis/main/Product%20Based%20Dashboard.png"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+Market Product Demand Analysis
+</h3>
+
+<p>
+Regional product demand analytics using Python and K-Means clustering.
+</p>
+
+<a href="https://github.com/niravtrivedi23/Market-Product-Demand-Analysis"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+
+<!-- Hotel -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/niravtrivedi23/gujarat-hotel-analytics-dashboard/main/Hotel%20Analytics.png"
+style="width:100%;border-radius:10px;">
+
+<h3 style="margin-top:20px;color:#38bdf8;">
+Gujarat Hotel Analytics
+</h3>
+
+<p>
+Power BI dashboard analyzing 1930+ hotels, pricing, ratings and hospitality trends.
+</p>
+
+<a href="https://github.com/niravtrivedi23/gujarat-hotel-analytics-dashboard"
+target="_blank"
+class="btn primary">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<div class="card">
+
+<h3 style="color:#38bdf8;">
+Let's Connect
+</h3>
+
+<p style="line-height:2;margin-top:20px;">
+
+📧 Email:
+niravtrivedi069@gmail.com
+
+<br><br>
+
+💼 LinkedIn:
+<a href="https://www.linkedin.com/in/trivedi-nirav-a1760424b/"
+style="color:#38bdf8;">
+View Profile
+</a>
+
+<br><br>
+
+💻 GitHub:
+<a href="https://github.com/niravtrivedi23"
+style="color:#38bdf8;">
+View GitHub
+</a>
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<footer style="
+background:#020617;
+padding:30px;
+text-align:center;
+margin-top:50px;
+">
+
+<p>
+
+© 2025 Nirav Trivedi | Data Analyst Portfolio
+
+</p>
+
+</footer>
+
+</body>
+</html>
