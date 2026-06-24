@@ -292,7 +292,36 @@ border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,.3);
 
 }
+.filter-buttons{
+text-align:center;
+margin-bottom:40px;
+}
 
+.filter-buttons button{
+background:#1e293b;
+color:white;
+border:none;
+padding:12px 20px;
+margin:5px;
+border-radius:25px;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+
+.filter-buttons button:hover{
+background:#38bdf8;
+transform:scale(1.05);
+}
+
+.card{
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+    
 /* Responsive */
 
 @media(max-width:900px){
@@ -440,10 +469,6 @@ Download Resume
 <p>Core Analytics Tools</p>
 </div>
 
-<div class="stat-card">
-<h2>1,00,000+</h2>
-<p>Records Analyzed</p>
-</div>
 
 
 </section>
@@ -575,6 +600,24 @@ gap:25px;">
 Analytics Projects Portfolio
 </h2>
 
+<div class="filter-buttons">
+
+<button onclick="filterProjects('all')">All</button>
+
+<button onclick="filterProjects('sports')">Sports</button>
+
+<button onclick="filterProjects('finance')">Finance</button>
+
+<button onclick="filterProjects('entertainment')">Entertainment</button>
+
+<button onclick="filterProjects('environment')">Environment</button>
+
+<button onclick="filterProjects('retail')">Retail</button>
+
+<button onclick="filterProjects('hospitality')">Hospitality</button>
+
+</div>
+
 <div style="
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
@@ -585,7 +628,7 @@ gap:30px;
 
 <!-- IPL Analytics Dashboard -->
 
-<div class="card">
+<div class="card project-card sports">
 
 <img src="https://raw.githubusercontent.com/niravtrivedi23/IPL-Dashboard/main/IPL%20Dashboard.png"
 style="width:100%;border-radius:10px;">
@@ -618,7 +661,7 @@ View Project
 
 <!-- Mutual Fund Risk & Performance Analytics -->
 
-<div class="card">
+<div class="card project-card finance">
 
 <img src="https://raw.githubusercontent.com/niravtrivedi23/mutual-fund-analysis-Dashboard-Python-PowerBI/main/Mutual%20Fund%20Dashboard%20.png"
 style="width:100%;border-radius:10px;">
@@ -652,7 +695,7 @@ View Project
 
 <!-- Tapi River Sustainability Analysis -->
 
-<div class="card">
+<div class="card project-card environment">
 
 <img src="https://raw.githubusercontent.com/niravtrivedi23/Surat-Tapiriver-Analysis-GEE/main/Visualization/ndtI_VISUALIZATION_2.gif"
 style="width:100%;border-radius:10px;">
@@ -686,7 +729,7 @@ View Project
 
 <!-- IMDb Top 250 Movie Analytics -->
 
-<div class="card">
+<div class="card project-card entertainment">
 
 <img src="https://raw.githubusercontent.com/niravtrivedi23/Indian-Movie-Analysis_-IMDb/main/IMDb%20Movie%20Dashboard.png"
 style="width:100%;border-radius:10px;">
@@ -718,7 +761,7 @@ View Project
 
 <!-- TV Serial Broadcast Analytics -->
 
-<div class="card">
+<div class="card project-card entertainment">
 
 <img src="https://github.com/niravtrivedi23/Indian-tv-serials-analytics/raw/main/TV%20Serial%20Dashboard.png"
 style="width:100%;border-radius:10px;">
@@ -750,7 +793,7 @@ View Project
 
 <!-- Global Web Series Analytics -->
 
-<div class="card">
+<div class="card project-card entertainment">
 
 <img src="https://github.com/niravtrivedi23/global-web-series-analysis/raw/main/Web%20Series%20Dashboard%20.png"
 style="width:100%;border-radius:10px;">
@@ -781,7 +824,7 @@ View Project
 
 <!-- Market Product Demand Analytics -->
 
-<div class="card">
+<div class="card project-card retail">
 
 <img src="https://raw.githubusercontent.com/niravtrivedi23/Market-Product-Demand-Analysis/main/Product%20Based%20Dashboard.png"
 style="width:100%;border-radius:10px;">
@@ -813,7 +856,7 @@ View Project
 
 <!-- Gujarat Hotel Analytics Dashboard -->
 
-<div class="card">
+<div class="card project-card hospitality">
 
 <img src="https://raw.githubusercontent.com/niravtrivedi23/gujarat-hotel-analytics-dashboard/main/Hotel%20Analytics.png"
 style="width:100%;border-radius:10px;">
@@ -902,6 +945,39 @@ Nirav Trivedi | Data Analyst Portfolio
 </p>
 
 </footer>
+
+<script>
+
+function filterProjects(category){
+
+let projects =
+document.querySelectorAll('.project-card');
+
+projects.forEach(project=>{
+
+if(category==='all'){
+
+project.style.display='block';
+
+}
+
+else if(project.classList.contains(category)){
+
+project.style.display='block';
+
+}
+
+else{
+
+project.style.display='none';
+
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
